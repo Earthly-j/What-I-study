@@ -1,0 +1,149 @@
+Inheritance
+-----------
+
+### extends … -Inheritance
+
+```
+class MyCustomWidget extends StatelessWidget {
+  // ... your code here
+}
+```
+
+### @override -Overriding
+
+**child class is intentionally replacing a method** with the same name from its parent class
+
+```
+class WelcomeBanner extends StatelessWidget {
+  final String username;
+  WelcomeBanner({required this.username});
+  @override // I'm REPLACING the original build() method
+  Widget build(BuildContext context) {
+    // My custom implementation
+    return Text('Hello, $username!');
+  }
+}
+```
+
+### super. -Cooperating
+
+```
+class _MyFadingWidgetState extends State<MyFadingWidget> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  @override
+  void initState() {
+    // It's critical to call the parent's initState first
+    // to ensure all the basic setup is done.
+    super.initState();
+    // Now, I can add my own initialization logic.
+    _controller = AnimationController(vsync: this, duration: Duration(seconds: 1));
+  }
+  @override
+  void dispose() {
+    // It's good practice to do my cleanup first.
+    _controller.dispose();
+    // Then, let the parent class do its cleanup.
+    super.dispose();
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    // ... build method implementation ...
+  }
+}
+```
+
+### Composition over Inheritance
+
+While inheritance is fundamental, Flutter’s philosophy heavily favors **composition** over deep inheritance.
+
+*   **Inheritance** is an **“is-a”** relationship. (`PrimaryButton` **is-a** `StyledButton`).
+*   **Composition** is a **“has-a”** relationship. (`ProfileScreen` **has-a** `AppBar` and **has-a** `ListView`).
+
+Instead of creating a complex chain like `Widget` -> `CustomScreen` -> `UserProfileScreen` -> `AdminUserProfileScreen`, we build our UI by putting smaller, independent widgets inside each other, like LEGO bricks 🧱. This makes our code more flexible, reusable, and easier to reason about.
+
+Abstract
+--------
+
+### `abstract` Class
+
+A class that cannot be instantiated directly. Acts as a blueprint.
+
+```
+// The Blueprint: This class cannot be instantiated directly.
+abstract class Animal {
+ 
+}
+```
+
+### `abstract` Method
+
+methods and properties that its child classes **must** implement. which are ended with ; semicolon
+
+```
+// The Blueprint: This class cannot be instantiated directly.
+abstract class Animal {
+  // Any class that extends Animal MUST implement makeSound().
+  void makeSound();
+}
+```
+
+### Use with @override
+
+```
+// Animal class says: "You MUST do this."
+abstract void makeSound();
+// Dog class says: "Okay, here's HOW I do it."
+@override
+void makeSound() {
+  print('Woof!');
+}
+```
+
+### concrete Method
+
+we don’t force to use until concrete Method
+
+```
+abstract class Animal {
+  // This is an abstract method. It's a rule.
+  // Any class that extends Animal MUST implement makeSound().
+  void makeSound();
+  // Abstract classes can also have normal methods with implementations.
+  void breathe() {
+    print('Inhaling... Exhaling...');
+  }
+}
+```
+
+in there void breathe() {
+print(‘Inhaling… Exhaling…’);
+}
+
+is not abstract method cause it doesn’t attached ; in the end
+
+Mixin
+-----
+
+mix in methods and properties from **one or more source classes into a target class.**
+
+e:
+
+*   **Code Reusability**: We can write a piece of functionality once and apply it to any class that needs it.
+*   **Avoiding Inheritance Issues**: It helps avoid the “diamond problem” found in languages with multiple inheritance, where a class inherits from two parent classes that **both have a method with the same name, creating ambiguity**. Mixins solve this by creating a linear sequence of classes.
+*   **Separation of Concerns**: You can keep distinct functionalities in separate mixins, making your code cleaner and more organized.
+
+### with
+
+```
+mixin Swimmer {
+  void swim() {
+    print("Splish, splash, I'm swimming!");
+  }
+}
+class Duck extends Animal with Swimmer {
+  void quack() {
+    print("Quack!");
+  }
+}
+```

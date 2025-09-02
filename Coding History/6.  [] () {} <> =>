@@ -1,0 +1,44 @@
+[ ] - Square Bracket
+----------------------
+
+> Square brackets are mainly used for indicating tha**t some words have been excluded from a quotation** or that words have been added and do not appear in the original quoted text I assume this like can’t add anymore in specific place so that considered add so that
+
+![Something I should watch but I can’t so that it’s piled like this but Sqare Backet blocking to spill out](https://miro.medium.com/v2/resize:fit:1140/format:webp/1*oHOPZDVPhNwv6fABqLsbUQ.png)
+
+() -Parentheses
+---------------
+
+> Greek _parenthesis_, literally “a putting in beside,” from _parentithenai_ “**put in beside,**” from _para-_ “**beside”** (see [para-](https://www.etymonline.com/word/para-#etymonline_v_7162) (1)) + _en-_ “in” + _tithenai_ “to put, to place” (from reduplicated form of PIE root [*dhe-](https://www.etymonline.com/word/*dhe-) “to set, put”).
+
+*   **Example**: The company’s profits increased in the last quarter (**as predicted by analysts**).
+*   **Example**: Please bring the document (**the one with the blue cover**) to the meeting.
+
+For me it’s means Demonstrate In Flutter it used for Calling Functions and Methods or Creating Objects likewise make something demonstrate, realize
+
+{} -Culry Braces
+----------------
+
+> A sign } used in writing or printing, chiefly for the purpose of **uniting together two or more lines,** words, staves of music, etc. Sometimes, but less correctly, used in plural to denote square brackets [ ].
+> 
+> 1656 T. Blount _Glossographia_ (at cited word), With Printers a Brace is that which couples two or more words together.
+
+![like Dictionary on CS it divided one thing for uniting together](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FIWebow8f3v_1N1YTn86fw.png)
+
+<> -**angle brackets**.
+-----------------------
+
+> the ancient [Greeks](https://en.wiktionary.org/wiki/Greek) as the right-pointing angle bracket ( > ) was called a **diple** and was widely used as a method of **drawing attention to specific lines of information,** however, they were used in the margins of the text to become more visible to the human eye.
+
+Likewise, in the context of programming, when we use them with a type like `List<String>`, they are used to provide **type arguments** for **generics**.
+
+*   <Widget>[ … ] — this is **drawing attention to specific lines of information. noticing [** ] is Widget
+
+### => -Lamda Function(arrow function)
+
+what is lambda ? well from the old meaing it’s
+
+![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QHqgm0MiLupZKsErkkuC-Q.png)
+
+then why used in CS ?
+
+> Be inspired by the [lambda calculus](https://en.wikipedia.

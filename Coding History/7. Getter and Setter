@@ -1,0 +1,138 @@
+History
+-------
+
+The concept of getters and setters evolved as a core idea in **object-oriented programming (OOP)**.
+
+### The Origin: Smalltalk and Encapsulation
+
+**Smalltalk** was a pioneering OOP language that was extremely influential. It was built on a few key ideas, with one of the most important being
+
+*   **The Core Idea:** In Smalltalk, an object’s internal data was meant to be completely private. You could _never_ access it directly from the outside. The only way to interact with an object was by sending it a “message.”
+*   **Messages as Methods:** Sending a message was the equivalent of calling a method. To get a value, you’d send a “getter” message. To set a value, you’d send a “setter” message.
+
+So, in Smalltalk, the getter/setter pattern wasn’t just a “good practice” — it was the **only way** to interact with an object’s stat
+
+Getter
+------
+
+A **getter**’s job is to answer the question: “How should I **present** this value to the outside world?”
+
+1. Direct, Read-Only Access (without Setter)
+---------------------------------------------
+
+The main goal is often to let other parts of the code read a value but prevent them from changing it. The getter simply returns the private variable.
+
+```
+class User {
+  final String _id = 'xyz-123';
+  String get id => _id;
+}
+```
+
+2. Convenient **syntax**
+-------------------------
+
+### 2–1 Formatting the Value
+
+The getter can present the raw data in a more user-friendly format
+
+```
+class Event {
+  final DateTime _timestamp = DateTime.now(); // e.g., 2025-08-31 15:40:46...
+  // The raw data is a complex DateTime object,
+  // but the getter presents it as a simple, readable string.
+  String get formattedDate {
+    return '${_timestamp.month}/${_timestamp.day}/${_timestamp.year}'; // Returns "8/31/2025"
+  }
+}
+```
+
+### 2–2 Calculating a Value (Computed Property)
+
+The getter can calculate a new value from one or more other variables. The value isn’t stored; it’s created every time you ask for it.
+
+```
+class ShoppingCart {
+  double _price = 100.0;
+  double _taxRate = 0.1; // 10% tax
+  // The totalPrice isn't stored anywhere.
+  // The getter calculates it on the fly, ensuring it's always up-to-date.
+  double get totalPrice {
+    return _price + (_price * _taxRate);
+  }
+}
+```
+
+3. What has become convenient
+------------------------------
+
+```
+class ShoppingCart {
+  double price = 100.0;
+  double taxRate = 0.1;
+  double get totalPriceAsProperty {
+    return price + (price * taxRate);
+  }
+ 
+  double calculateTotalPrice() {
+    return price + (price * taxRate);
+  }
+}
+void main() {
+  var cart = ShoppingCart();
+  print('Using getter: \$${cart.totalPriceAsProperty}');
+//Using method: $110.0
+  print('Using method: \$${cart.calculateTotalPrice()}');
+//Using method: $110.0
+}
+```
+
+When to Choose Which?
+---------------------
+
+*   **Use a Getter when:** The code feels like we are asking for a **characteristic or property** of the object. It shouldn’t require any parameters and should be relatively quick to compute.
+*   `user.fullName`
+*   `email.isValid`
+*   `shape.area`
+*   **Use a Method when:** The code feels like we are telling the object to **perform an action or a complex calculation**. It’s especially appropriate if you need to pass in parameters.
+*   `database.saveChanges()`
+*   `image.convertToPNG('my_image.png')`
+*   `user.calculateAge(onDate: someOtherDate)`
+
+Setter
+------
+
+The primary purpose of a setter is to provide **controlled write access** to a variable.
+
+The **Setter** is the gatekeeper for people entering**. It checks their ID to make sure they’re valid** (e.g., ensuring a price isn’t negative) and can alert security that someone has entered
+
+*   **Real-world task:** When you set an `email` address, the setter can **validate** that it contains an "@" symbol and **clean it up** by making it all lowercase before saving it.
+
+The primary purpose of a setter is to provide **controlled write access** to a variable.
+
+### what is difference basic method ?
+
+*   **Use a Setter ➡️** when we are simply **setting a property’s value**. The action should be straightforward and unlikely to fail. It feels like an assignment.
+*   `user.email = 'new@email.com';`
+*   `car.color = Colors.blue;`
+*   **Use a Method ➡️** when we are telling an object to **perform an operation**. The action might have conditions, might fail, or might need to return a result.
+*   `database.save();`
+*   `file.delete();`
+*   `user.calculateAge();`
+
+### What is Difference Static ?
+
+Static variable belongs to a **single object**. Every object has its own `_`instance .
+
+**Class (Static) Variable** belongs to the **class as a whole**. There is only one copy shared by all objects of that class.
+
+Example
+-------
+
+### Instance Variable (`color`)
+
+The `color` is an **instance variable**. Every single car that is built from the blueprint can have its own different color. The first car is red, the second is blue, and the third is black. Each **instance** gets its own copy of the `color` variable.
+
+### Static Variable (`numberOfCarsBuilt`)
+
+The `numberOfCarsBuilt` is a **static variable**. There is only **one** counter on the factory wall. It's not attached to any single car. When a new car is built—regardless of its color—this single counter goes up by one. It's a shared piece of data that belongs to the factory (the class) as a whole.
