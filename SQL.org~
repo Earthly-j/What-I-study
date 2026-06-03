@@ -1,0 +1,152 @@
+* basic concept
+
+** literal
+Remember rules of literals :String -> "xd&" ascii character, no max / min character, composed of charchar -> 'a' or '9' or an ascii character, only one characterint -> 10000 without double / single quotes and 10_000 = 10000 it's just readability
+
+** Find an invalid literal
+
+Report a typo
+
+Which of these literals is invalid?
+
+
+10000000
+
+"10000000"
+
+'10000000'
+
+10\_000\_000
+
+Continue
+
+
+
+****  C ->  Java why happen?
+╔═════════════════════════════════════════════════════════════════════════════╗
+║                   JAVA: SOFTWARE vs HARDWARE (WHY & HOW)                    ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+┌─ SOFTWARE SIDE: WHY OBJECTS? ────────┐ ┌─ HARDWARE SIDE: WHY JVM & RAM? ────┐
+│                                      │ │                                    │
+│ Old languages (C) were messy:        │ │ Dynamic objects make memory hard.  │
+│   names[100], ages[100], grades[100] │ │                                    │
+│            │                         │ │ C/C++: YOU must 'delete' from RAM  │
+│            ▼                         │ │            │                       │
+│ (Variables floating everywhere)      │ │            ▼                       │
+│            │                         │ │ Forget? RAM leak ──────> Crash!    │
+│            ▼                         │ │            │                       │
+│ Java's Design:                       │ │            ▼                       │
+│   "Group data & behavior together!"  │ │ JVM Solution (The Bodyguard):      │
+│            │                         │ │ ┌──────────────────────────────┐   |  
+│            ▼                         │ │ │ Stack  : Static vars (Fast)  │   |
+│   Class  = Blueprint (Human-friendly │ │ │ Heap   : 'new Object()' RAM  │   |
+│   Object = Dynamic Copy (Instance)   │ │ │ Garbage: Auto-deletes RAM!   │   |
+│            │                         │ │ └──────────────────────────────┘   |
+│            ▼                         │ │                                    │
+│ Makes code easier for humans.        │ │                                    │
+│ (CPU/RAM just see 1s and 0s)         │ │                                    │
+└──────────────────────────────────────┘ └───────────────────────────────────-┘
+┌─ SUMMARY ───────────────────────────────────────────────────────────────────┐
+│  1. Must 'new Object()': Build the house before opening the door.           │
+│  2. Dynamic: # of objects decided at runtime based on user input.           │
+│  3. RAM survives: JVM auto-alloc & deletes via Garbage Collector.           │
+│  => JVM wasn't the reason for objects; it was the bodyguard making them     │
+│     safe!                                                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║      JAVA: NO STANDALONE FUNCTIONS! Every func MUST live inside a Class   ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+   ❌  void myFunc() ────> ERROR! Must be inside a class.
+                                   ▼
+┌─ THE STATIC WAY ─────────────────────┐ ┌─ THE DYNAMIC WAY ────────────────┐
+│ Belongs to: THE CLASS (Blueprint)    │ │ Belongs to: THE OBJECT (Instance │
+│ Can be called IMMEDIATELY.           │ │ MUST create an object first!     │
+│                                      │ │                                  │
+│  class Car {                         │ │  class Car {                     │
+│    static void honk()                │ │    void drive()                  │
+│  }                                   │ │  }                               │
+│           │                          │ │           │                      │
+│           ▼ (no object needed)       │ │           ▼ (must instantiate)   │
+│                                      │ │                                  │
+│  Car.honk();                         │ │  Car myCar = new Car();          │
+│  (Directly via Class Name)           │ │  myCar.drive();                  │
+│                                      │ │  (Call on the Object, NOT Class) │
+└──────────────────────────────────────┘ └──────────────────────────────────┘
+┌─ SUMMARY ─────────────────────────────────────────────────────────────────┐
+│ Static  = Shared class tool (Available immediately).                      │
+│ Dynamic = Personal object action (Requires 'new' instance).               │
+└───────────────────────────────────────────────────────────────────────────┘
+
+╔═════════════════════════════════════════════════════════════════════════════╗
+║                  JAVA MAIN: Why String[] args (NOT String args)             ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+┌WHY String[] ? (ARRAY vs SINGLE STR┐ ┌─ WHY "args" & OTHER LANGUAGES? ───────┐
+│                                   │ │                                       │
+│Command:  java MyApp apple banana  │ │  "args" is just a variable name:      │
+│                                   │ │                                       │
+│▼ If it was String args:           │ │public static void main(String[] args) │
+│┌──────────────────────────────────│ │public static void main(String[] foo)  │
+││ "apple banana"← Treated as ONE   │ │(You can name it whatever you want)    │ 
+│└──────────────────────────────────│ │                                       │
+│▼ If it is String[] args:          │ │                                       │
+│┌────────────┬────────────┐        │ │Other Languages (Same Concept):        │
+││   "apple"  │  "banana"  │        │ │┌──────────────────────────────────┐   │
+│└────────────┴────────────┘        │ ││ C/C++     : char *argv[]         │   │
+│     [0]           [1]             │ ││ C#        : string[] args        │   │
+│                                   │ ││ Kotlin    : Array<String>        │   │
+┌─ SUMMARY ───────────────────────────────────────────────────────────────────┐
+│  1. [] means Array → Splits command-line input into separate, accessible    │
+│     elements.                                                               │
+│  2. "args" is just a name → You can rename it to anything (e.g. arguments). │
+│  3. Different languages, same idea → They all pass command-line arguments   │
+│     as an array/list of strings.                                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+****  System.out.println("Hello!") vs C's stdout & printf:drill:
+:PROPERTIES:
+:ID:       C831B681-9102-4028-ABC2-B1F9F6B0B3C7
+:DRILL_LAST_INTERVAL: 0.0
+:DRILL_REPEATS_SINCE_FAIL: 1
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 1
+:DRILL_AVERAGE_QUALITY: 1.0
+:DRILL_EASE: 2.5
+:DRILL_LAST_QUALITY: 1
+:DRILL_LAST_REVIEWED: [Y-06-03 Wed 16:%]
+:END:
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║          System.out.println("Hello!") vs C's stdout & printf               ║
+╚════════════════════════════════════════════════════════════════════════════╝
+║                                                                            ║   
+║  ┌─ JAVA ANATOMY ────────────────────────────────────────────────────────┐ ║  
+║  │  System.out.println("Hello, World!");                                 │ ║
+║  │     │      │        └─ Method: prints text + newline (\n)             │ ║
+║  │     │      └─ Object: standard output stream (like C's stdout)        │ ║
+║  │     └─ Class: holds the 'out' object                                  │ ║
+║  └───────────────────────────────────────────────────────────────────────┘ ║
+║                                                                            ║
+║  ┌─ C LANGUAGE ──────────────────────┐  ┌─ JAVA LANGUAGE ────────────────┐ ║  
+║  │ fprintf(stdout, "Hello!\n");      │  │ System.out.[println]("Hello!");  ║
+║  │ printf("Hello!\n"); // default    │  │ System.out.print("Hello!");    │ ║
+║  │ puts("Hello!");     // + newline  │  │ System.out.[printf]("Age:%d",25  ║
+║  │                                   │  │                                │ ║
+║  │ 'stdout' is EXPLICIT in fprintf   │  │ 'System.out' must ALWAYS be    │ ║
+║  │ 'printf' uses stdout by DEFAULT   │  │ explicitly stated (OOP rule)   │ ║
+║  └───────────────────────────────────┘  └─────────────────────────────-──┘ ║
+║                                                                            ║
+║  ┌─ UNIX STANDARD STREAMS (The Shared Root) ──────────────────────────────┐║
+║  │  INPUT:   stdin  -> Java: [System.in]   / C: stdin                     │║
+║  │  OUTPUT:  stdout -> Java: [System.out]  / C: stdout                    │║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+#+BEGIN_EXAMPLE
+
+#+END_EXAMPLE
+
+* System.out.println vs C's stdout
+  :PROPERTIES:
+  :ID:       FCA8A58B-105C-44DC-BD67-1562A14E01DA
+  :END:
+  
