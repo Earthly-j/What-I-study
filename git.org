@@ -5,4 +5,3 @@
 *** management
 $ for git log /
 demeded fetch / but AI told do pull 
-* 
