@@ -108,12 +108,12 @@ Continue
 :ID:       C831B681-9102-4028-ABC2-B1F9F6B0B3C7
 :DRILL_LAST_INTERVAL: 0.0
 :DRILL_REPEATS_SINCE_FAIL: 1
-:DRILL_TOTAL_REPEATS: 1
-:DRILL_FAILURE_COUNT: 1
-:DRILL_AVERAGE_QUALITY: 1.0
+:DRILL_TOTAL_REPEATS: 3
+:DRILL_FAILURE_COUNT: 3
+:DRILL_AVERAGE_QUALITY: 1.333
 :DRILL_EASE: 2.5
-:DRILL_LAST_QUALITY: 1
-:DRILL_LAST_REVIEWED: [Y-06-03 Wed 16:%]
+:DRILL_LAST_QUALITY: 2
+:DRILL_LAST_REVIEWED: [Y-06-04 Thu 17:%]
 :END:
 
 ╔════════════════════════════════════════════════════════════════════════════╗
@@ -149,4 +149,80 @@ Continue
   :PROPERTIES:
   :ID:       FCA8A58B-105C-44DC-BD67-1562A14E01DA
   :END:
-  
+
+* Java_Keywords_abstarct:drill:
+:PROPERTIES:
+:ID:       6CC04C10-B6E4-4F39-B574-FF2D913C30E9
+:DRILL_LAST_INTERVAL: 0.0
+:DRILL_REPEATS_SINCE_FAIL: 1
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 1
+:DRILL_AVERAGE_QUALITY: 1.0
+:DRILL_EASE: 2.5
+:DRILL_LAST_QUALITY: 1
+:DRILL_LAST_REVIEWED: [Y-06-04 Thu 17:%]
+:END:
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                  JAVA ABSTRACT CLASSES & METHODS RULES                       ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║  ┌─ ABSTRACT METHODS ──────────────────────────────────────────────────────┐ ║
+║  │ • Must have no body (no {})                                             │ ║
+║  │   → abstract void makeSound();                                          │ ║
+║  │ • If a class contains any [abstract] method                             │ ║
+║  │   the class itself must be declared abstract                            │ ║
+║  └─────────────────────────────────────────────────────────────────────────┘ ║
+║  ┌─ ABSTRACT CLASSES ──────────────────────────────────────────────────────┐ ║
+║  │ • Cannot be instantiated                                                │ ║
+║  │   Example: new Animal() → illegal                                       │ ║
+║  │                                                                         │ ║
+║  │ • Subclass must[implement all abstract methods]                         │ ║
+║  │   or itself be declared [abstract]                                      │ ║
+║  │                                                                         │ ║
+║  │ • Can have zero abstract methods                                        │ ║
+║  │   (useful to prevent [direct instantiation])                            │ ║
+║  └─────────────────────────────────────────────────────────────────────────┘ ║
+║  ┌─ LIMITATIONS ───────────────────────────────────────────────────────────┐ ║
+║  │ • 'abstract' keyword can only be used with:                             │ ║
+║  │   → [Classes] and [Methods]                                             │ ║
+║  │ • Cannot be used with:                                                  │ ║
+║  │   → [Variables], [Constructors]                                         │ ║
+║  └─────────────────────────────────────────────────────────────────────────┘ ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+
+**** Java_public_name:drill:
+:PROPERTIES:
+:ID:       6EF54D7B-7445-462F-9567-59008B875791
+:DRILL_LAST_INTERVAL: 0.0
+:DRILL_REPEATS_SINCE_FAIL: 1
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 1
+:DRILL_AVERAGE_QUALITY: 1.0
+:DRILL_EASE: 2.5
+:DRILL_LAST_QUALITY: 1
+:DRILL_LAST_REVIEWED: [Y-06-04 Thu 17:%]
+:END:
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║             WHY DOES 'println' NEED A CLASS? (The House Analogy)           ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║  ┌─ 1. THE CONTAINER RULE (Why attach println to a class?) ─────────────┐  ║
+║  │ In Python: print("Hello")           <- Code floats in the void!      │  ║
+║  │ In Java:   Everything MUST live inside a [class]                     │  ║
+║  │                                                                      │  ║
+║  │  [Class] = House  ──>  [main] = Door  ──>  [println] = Light      '  │  ║
+║  │  You can't turn on a light switch floating in empty space!           │  ║
+║  └──────────────────────────────────────────────────────────────────────┘  ║
+║  ┌─ 2. THE PLATFORM RESTRICTION (Why the specific name "Main"?) ───────┐   ║
+║  │  Java Rule:   If class is [public], name MUST match[filename].      │   ║
+║  │  Platform:    Auto-saves your code as "Main.java" behind scenes.    │   ║
+║  │  Result:      public class HelloWorld -> CRASH (file mismatch!)     │   ║
+║  │  Workaround:  Remove 'public' -> class HelloWorld -> WORKS!         │   ║
+║  └─────────────────────────────────────────────────────────────────────┘   ║
+║  ┌─ 3. CODE EXAMPLES ──────────────────────────────────────────────────┐   ║
+║  │  FAIL: public class MyProg { ... }   // File is Main.java!          │   ║
+║  │  PASS: public class Main { ... }     // Matches Main.java           │   ║
+║  │  PASS: class AnyName { ... }         // 'public' keyword removed    │   ║
+║  └─────────────────────────────────────────────────────────────────────┘
+your file is saved as HelloWorldProgram.java, the code must say public class HelloWorldProgram.║
+╚════════════════════════════════════════════════════════════════════════════╝
