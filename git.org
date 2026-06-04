@@ -1,0 +1,8 @@
+* magit
+** error
+ failed to push some refs to 'https://github.com/Earthly-j/What-I-study'
+
+*** management
+$ for git log /
+demeded fetch / but AI told do pull 
+* 
