@@ -24,7 +24,7 @@ I try add into 80x24 which is the most primitive display interface
 ## VIM
 [Vim adventure](https://vim-adventures.com/)
 
-# Python 
+## Python 
 [Thonny](https://thonny.org/)
 
-> 事実ト速昇シテ行ク
+# 事実ト速昇シテ行ク
