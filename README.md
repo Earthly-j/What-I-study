@@ -4,6 +4,9 @@ mostly written in Org mode for cloze, executable code, management schedule
 
 I try add into 80x24 which is the most primitive display interface 
 
+Like teaching English radiculusly, right now learning computer is radiculus 
+
+and at least I just organize what's nice for my experience 
 
 ## Unix Curriculum 
 [cs1302](https://cs1302book.com/index.html)
