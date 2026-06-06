@@ -15,6 +15,9 @@ I try add into 80x24 which is the most primitive display interface
 ## Java 
 [Hyper skill](https://hyperskill.org/)
 
+## Bash
+[Bandit](https://overthewire.org/wargames/bandit/)
+
 ## SQL
 [kightlab](https://mystery.knightlab.com/)
 
@@ -27,4 +30,3 @@ I try add into 80x24 which is the most primitive display interface
 ## Python 
 [Thonny](https://thonny.org/)
 
-# 事実ト速昇シテ行ク
