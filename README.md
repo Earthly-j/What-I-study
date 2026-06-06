@@ -1,3 +1,5 @@
+>> 事実ト速昇シテ行ク
+
 # My repository for recoding my studies 
 
 mostly written in Org mode for cloze, executable code, management schedule
@@ -5,21 +7,23 @@ mostly written in Org mode for cloze, executable code, management schedule
 I try add into 80x24 which is the most primitive display interface 
 
 
-# Unix Curriculam (Essetial only in Virtual IT world )
+## Unix Curriculam 
 [cs1302](https://cs1302book.com/index.html)
 
-# Emacs Org
+## Emacs Org
 
 [Bernt Hansen](https://doc.norang.ca/org-mode.html)
 
-# Java 
+## Java 
 [Hyper skill](https://hyperskill.org/)
 
-# GIT
+## GIT
 [Leaning git branch](https://learngitbranching.js.org/)
 
-# VIM
+## VIM
 [Vim adventure](https://vim-adventures.com/)
+
+
 
 
 # Python 
