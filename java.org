@@ -226,3 +226,139 @@ Continue
 ║  └─────────────────────────────────────────────────────────────────────┘
 your file is saved as HelloWorldProgram.java, the code must say public class HelloWorldProgram.║
 ╚════════════════════════════════════════════════════════════════════════════╝
+
+
+**** Java_fileStructure:drlii:
+================================================================================
+THE "NAME MATCHING" RULE IN JAVA
+================================================================================
+FILE: [Animal].java
+┌────────────────────────────────────────────────────────────────────────────┐
+│ package com.myapp;                                                       
+│                                                                          
+│ public class [Animal] { <-- PUBLIC? File MUST match!       [important]   
+│     // ...                                                               
+│ }                                                                        
+│                                                                          
+│ class Dog {               <-- NOT PUBLIC? Name doesn't matter![important]
+│     // ...                                                               
+│ }                                                                        
+│                                                                          
+│ class Cat {               <-- NOT PUBLIC? Can live here too! [important] 
+│     // ...                                                               
+│ }                                                                        
+└────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+1. PUBLIC class = BOSS. File name MUST be its name.             [important]
+2. Only ONE public class allowed per .java file.                [important]
+3. Non-public classes are "guests". Name doesn't force a file.  [important]
+================================================================================
+
+
+
+* Sharing_computer_nature 
+
+* nature_of_Java
+┏┓╻┏━┓╺┳╸╻ ╻┏━┓┏━╸  ┏━┓┏━╸   ┏┓┏━┓╻ ╻┏━┓
+┃┗┫┣━┫ ┃ ┃ ┃┣┳┛┣╸   ┃ ┃┣╸     ┃┣━┫┃┏┛┣━┫
+╹ ╹╹ ╹ ╹ ┗━┛╹┗╸┗━╸  ┗━┛╹    ┗━┛╹ ╹┗┛ ╹ ╹
+
+** Operator Overloading:drill:
+╔═╗┌─┐┌─┐┬─┐┌─┐┌┬┐┌─┐┬─┐  ╔═╗┬  ┬┌─┐┬─┐┬  ┌─┐┌─┐┌┬┐┬┌┐┌┌─┐
+║ ║├─┘├┤ ├┬┘├─┤ │ │ │├┬┘  ║ ║└┐┌┘├┤ ├┬┘│  │ │├─┤ │││││││ ┬
+╚═╝┴  └─┘┴└─┴ ┴ ┴ └─┘┴└─  ╚═╝ └┘ └─┘┴└─┴─┘└─┘┴ ┴─┴┘┴┘└┘└─┘
+
+Single quotes (' ') = Java treats it as a [number] in disguise [(ASCII/Unicode)]. It will do math.
+Double quotes (" ") = Java treats it as [text]. It will glue it together.
+"" + '9' + ' ' + '8'
+
+    "" + '9' → Java sees String + char → Converts char to String:[ "9"]
+    "9" + ' ' → Java sees String + char → Converts char to String:[ "9 "]
+
+
+** Standard Output
+╔═╗┌┬┐┌─┐┌┐┌┌┬┐┌─┐┬─┐┌┬┐  ╔═╗┬ ┬┌┬┐┌─┐┬ ┬┌┬┐
+╚═╗ │ ├─┤│││ ││├─┤├┬┘ ││  ║ ║│ │ │ ├─┘│ │ │ 
+╚═╝ ┴ ┴ ┴┘└┘─┴┘┴ ┴┴└──┴┘  ╚═╝└─┘ ┴ ┴  └─┘ ┴
+- println
+has an [Implicit] Newline. [Implici]t means it is understood without being [explicitly] written. You don't have to write \n; the function [assumes] it and adds it [automatically.]
+
+println uses String [Concatenation].[ Concatenation] means chaining things together end-to-end. When you do "My age is " + age, you are [concatenating] the text and the variable.
+
+println does not add [a new line before the text], but instead, it [outputs the text first], and then adds the [\n] at the very end. That is 100% correct.
+so it's same as print[("\n\n")];
+
+
+- printf'
+ requires an [Explicit] Newline. Explicit means you [must write it out yourself]. If you want a [newline] with printf, you must [explicitly ] type [ \n] at the end.
+3 "value": X3
+ printf uses String [Substitution]  (or String [Interpolation]). It creates a mold (like "My age is [%d]") and [substitutes] the [%d] with the actual variable at runtime.
+
+ [\n] with print and println too! It is absolutely NOT just a[ printf] thing.
+
+ System.out.printf(num1 + num2);// [error] ` "value": 
+
+ when is printf actually needed?
+
+
+** java:drill:
++============================================================================+
+|                                 J  D  K                                    |
+|   ([Dev Kit] | [javac], jar, javadoc | [Compiles], Runs, Archives)             |
+|    (Java Development Kit   The Full Tool box        
+|   +--------------------------------------------------------------------+   |
+|   |                              J  R  E                               |   |
+|   |   ([Runtime]    | [Runs apps] | [No compilers]                       
+|   |   *JARs inside JRE:JVM Implementation = The java executable       |   |
+|   |   +------------------------------------------------------------+   |   |
+|   |   |                           J  C  L                          |   |   |
+|   |   |   ([Class Lib] | java.lang, .util, .io |[ Pre-written code]) |   |   |   
+|   |   |   (Java Class Library / API | [Pre-written code] | [java.*]  |   |   |
+|   |   |   +--------------------------------------------------------+   |   |   |
+|   |   |   |                        J  V  M                         |   |        |
+|   |   |   |   ([Virtual Machine] |[ Execution Engine] |                |   |   |
+|   |   |   |      [Class Loader]    [Bytecodecode verifier]  
+|   |   |   +--------------------------------------------------------+   |   |   |
+|   |   |                                                                |   |   |
+|   |   +------------------------------------------------------------+   |   |
+|   |                                                                    |   |
+|   +--------------------------------------------------------------------+   |
+|                                                                            |
+|  .JAR = Archive of .class files. (Created by JDK, read by JRE/JVM)         |
++============================================================================+
+JVM Specification = The Rulebook (Abstract / Documentation)
+JDK (Tools) 
+ └── JRE (Runtime environment)
+      └── JVM Implementation (The HotSpot or OpenJ9 software engine)
+
+You write [Main.java]
+You use the JDK's [javac tool]. It reads the [JVM Specification] to know the rules, and outputs Main.[class] (Bytecode).
+    You use the JDK's java tool (which contains the JVM Implementation). The Implementation reads your Bytecode, follows the rules of the Specification, and translates it into actions your [computer's OS] can understand.
+
+
+
+
+
+
+** wrong
+*** JRE vs JDK
+First, you will write a source code file with the .java extension. Then you will compile it to obtain a .class file. Finally, you want to run the program.
+
+What is the minimal environment required to perform all of these actions?
+Fill in the gaps with the relevant elements
+
+The minimal environment is [JRE]
+
+
+
+
+** Primitive and reference types
+
+ int is like Flour. It's a raw ingredient. It sits there. It doesn't do anything by itself. (Lowercase, simple).
+ String is like a Cake. It was baked using a recipe (a Class). Because it is a finished product (an Object), it comes with features—you can slice it, frost it, or eat it (Methods). (Uppercase, complex).
+
+
+** new keyword
+
+In most cases, an object of a reference type can be created using the new keyword. When we use the new keyword, the memory is allocated for the object we create. That is called instantiation of the object because we create an instance of it. Then we initialize the variable by assigning some value to it. Often, as in our example, it is done with one line.
