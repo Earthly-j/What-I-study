@@ -1,0 +1,34 @@
+* My repository for recoding my studies 
+
+mostly written in Org mode for cloze, executable code, management schedule
+
+I try add into 80x24 which is the most primitive display interface 
+
+Like teaching English radiculusly, right now learning computer is radiculus 
+
+and at least I just organize what's nice for my experience 
+
+** Unix Curriculum 
+[cs1302](https://cs1302book.com/index.html)
+
+** Emacs Org
+
+[Bernt Hansen](https://doc.norang.ca/org-mode.html)
+
+** Java 
+[Hyper skill](https://hyperskill.org/)
+
+** Bash
+[Bandit](https://overthewire.org/wargames/bandit/)
+** SQL
+[kightlab](https://mystery.knightlab.com/)
+https://www.sqlzoo.net/wiki/SQL_Tutorial
+** GIT
+[Leaning git branch](https://learngitbranching.js.org/)
+
+** VIM
+[Vim adventure](https://vim-adventures.com/)
+
+** Python 
+[Thonny](https://thonny.org/)
+
