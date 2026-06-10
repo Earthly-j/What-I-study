@@ -26,9 +26,11 @@ https://www.sqlzoo.net/wiki/SQL_Tutorial
 ** GIT
 [Leaning git branch](https://learngitbranching.js.org/)
 
+** cheetsheet
+[cheatsheet](https://cheatsheets.zip/bash)
+
 ** VIM
 [Vim adventure](https://vim-adventures.com/)
 
 ** Python 
 [Thonny](https://thonny.org/)
-
