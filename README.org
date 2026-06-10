@@ -26,8 +26,18 @@ https://www.sqlzoo.net/wiki/SQL_Tutorial
 ** GIT
 [Leaning git branch](https://learngitbranching.js.org/)
 
+** Easy Algorithm learning
+[sufca](
+https://www.cs.usfca.edu/~galles/visualization/StackArray.html
+)
+
+
 ** cheetsheet
 [cheatsheet](https://cheatsheets.zip/bash)
+
+** Easy naming tool
+[exiftool](https://exiftool.org/)
+
 
 ** VIM
 [Vim adventure](https://vim-adventures.com/)
