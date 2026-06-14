@@ -57,4 +57,32 @@
 
 *** management
 $ for git log /
-demeded fetch / but AI told do pull 
+demeded fetch / but AI told do pull
+
+
+
+* git commands 
+
+
+** git branch :drill: 
+┌─┐┬┌┬┐  ┌┐ ┬─┐┌─┐┌┐┌┌─┐┬ ┬
+│ ┬│ │   ├┴┐├┬┘├─┤││││  ├─┤
+└─┘┴ ┴   └─┘┴└─┴ ┴┘└┘└─┘┴ ┴
+
+- why -f force make move but without
+
+- it can move some [point to point]
+
+
+
+** git cherry-pick
+┌─┐┬┌┬┐  ┌─┐┬ ┬┌─┐┬─┐┬─┐┬ ┬   ┌─┐┬┌─┐┬┌─
+│ ┬│ │   │  ├─┤├┤ ├┬┘├┬┘└┬┘───├─┘││  ├┴┐
+└─┘┴ ┴   └─┘┴ ┴└─┘┴└─┴└─ ┴    ┴  ┴└─┘┴ ┴
+
+
+
+
+
+
+

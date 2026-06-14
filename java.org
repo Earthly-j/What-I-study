@@ -1,3 +1,4 @@
+
 * basic concept
 
 ** literal
@@ -104,16 +105,17 @@ Continue
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ****  System.out.println("Hello!") vs C's stdout & printf:drill:
+SCHEDULED: <2026-06-12 Fri>
 :PROPERTIES:
 :ID:       C831B681-9102-4028-ABC2-B1F9F6B0B3C7
-:DRILL_LAST_INTERVAL: 0.0
-:DRILL_REPEATS_SINCE_FAIL: 1
-:DRILL_TOTAL_REPEATS: 3
+:DRILL_LAST_INTERVAL: 4.14
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 4
 :DRILL_FAILURE_COUNT: 3
-:DRILL_AVERAGE_QUALITY: 1.333
-:DRILL_EASE: 2.5
-:DRILL_LAST_QUALITY: 2
-:DRILL_LAST_REVIEWED: [Y-06-04 Thu 17:%]
+:DRILL_AVERAGE_QUALITY: 2.25
+:DRILL_EASE: 2.6
+:DRILL_LAST_QUALITY: 5
+:DRILL_LAST_REVIEWED: [Y-06-08 Mon 18:%]
 :END:
 
 ╔════════════════════════════════════════════════════════════════════════════╗
@@ -151,16 +153,17 @@ Continue
   :END:
 
 * Java_Keywords_abstarct:drill:
+SCHEDULED: <2026-06-12 Fri>
 :PROPERTIES:
 :ID:       6CC04C10-B6E4-4F39-B574-FF2D913C30E9
-:DRILL_LAST_INTERVAL: 0.0
-:DRILL_REPEATS_SINCE_FAIL: 1
-:DRILL_TOTAL_REPEATS: 1
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 2
 :DRILL_FAILURE_COUNT: 1
-:DRILL_AVERAGE_QUALITY: 1.0
-:DRILL_EASE: 2.5
-:DRILL_LAST_QUALITY: 1
-:DRILL_LAST_REVIEWED: [Y-06-04 Thu 17:%]
+:DRILL_AVERAGE_QUALITY: 2.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-08 Mon 18:%]
 :END:
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                  JAVA ABSTRACT CLASSES & METHODS RULES                       ║
@@ -191,40 +194,27 @@ Continue
 
 
 **** Java_public_name:drill:
+SCHEDULED: <2026-06-13 Sat>
 :PROPERTIES:
 :ID:       6EF54D7B-7445-462F-9567-59008B875791
-:DRILL_LAST_INTERVAL: 0.0
-:DRILL_REPEATS_SINCE_FAIL: 1
-:DRILL_TOTAL_REPEATS: 1
-:DRILL_FAILURE_COUNT: 1
-:DRILL_AVERAGE_QUALITY: 1.0
-:DRILL_EASE: 2.5
-:DRILL_LAST_QUALITY: 1
-:DRILL_LAST_REVIEWED: [Y-06-04 Thu 17:%]
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 5
+:DRILL_FAILURE_COUNT: 4
+:DRILL_AVERAGE_QUALITY: 1.6
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-09 Tue 16:%]
 :END:
 
 ╔════════════════════════════════════════════════════════════════════════════╗
-║             WHY DOES 'println' NEED A CLASS? (The House Analogy)           ║
-╠════════════════════════════════════════════════════════════════════════════╣
-║  ┌─ 1. THE CONTAINER RULE (Why attach println to a class?) ─────────────┐  ║
-║  │ In Python: print("Hello")           <- Code floats in the void!      │  ║
-║  │ In Java:   Everything MUST live inside a [class]                     │  ║
-║  │                                                                      │  ║
-║  │  [Class] = House  ──>  [main] = Door  ──>  [println] = Light      '  │  ║
-║  │  You can't turn on a light switch floating in empty space!           │  ║
-║  └──────────────────────────────────────────────────────────────────────┘  ║
-║  ┌─ 2. THE PLATFORM RESTRICTION (Why the specific name "Main"?) ───────┐   ║
+║  ┌─ 2. THE PLATFORM RESTRICTION (Why the specific name "[Main]"?) ───────┐ ║
 ║  │  Java Rule:   If class is [public], name MUST match[filename].      │   ║
 ║  │  Platform:    Auto-saves your code as "Main.java" behind scenes.    │   ║
 ║  │  Result:      public class HelloWorld -> CRASH (file mismatch!)     │   ║
 ║  │  Workaround:  Remove 'public' -> class HelloWorld -> WORKS!         │   ║
 ║  └─────────────────────────────────────────────────────────────────────┘   ║
-║  ┌─ 3. CODE EXAMPLES ──────────────────────────────────────────────────┐   ║
-║  │  FAIL: public class MyProg { ... }   // File is Main.java!          │   ║
-║  │  PASS: public class Main { ... }     // Matches Main.java           │   ║
-║  │  PASS: class AnyName { ... }         // 'public' keyword removed    │   ║
-║  └─────────────────────────────────────────────────────────────────────┘
-your file is saved as HelloWorldProgram.java, the code must say public class HelloWorldProgram.║
+║
 ╚════════════════════════════════════════════════════════════════════════════╝
 
 
@@ -260,11 +250,33 @@ FILE: [Animal].java
 * Sharing_computer_nature 
 
 * nature_of_Java
-┏┓╻┏━┓╺┳╸╻ ╻┏━┓┏━╸  ┏━┓┏━╸   ┏┓┏━┓╻ ╻┏━┓
-┃┗┫┣━┫ ┃ ┃ ┃┣┳┛┣╸   ┃ ┃┣╸     ┃┣━┫┃┏┛┣━┫
-╹ ╹╹ ╹ ╹ ┗━┛╹┗╸┗━╸  ┗━┛╹    ┗━┛╹ ╹┗┛ ╹ ╹
+                                                                        
+                  ,--.                                      ,---.       
+,--,--,  ,--,--.,-'  '-.,--.,--.,--.--. ,---.        ,---. /  .-'       
+ |      \' ,-.  |'-.  .-'|  ||  ||  .--'| .-. :      | .-. ||  `-,       
+ |  ||  |\ '-'  |  |  |  '  ''  '|  |   \   --.,----.' '-' '|  .-',----. 
+`--''--' `--`--'  `--'   `----' `--'    `----''----' `---' `--'  '----' 
+                                                                        
+                                                                        
+     ,--.                                                               
+     |  | ,--,--.,--.  ,--.,--,--.                                      
+,--. |  |' ,-.  | \  `'  /' ,-.  |                                      
+ |  '-'  /\ '-'  |  \    / \ '-'  |                                      
+ `-----'  `--`--'   `--'   `--`--'
 
 ** Operator Overloading:drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       E8EDEFC3-905C-4B1C-8DA4-9A305198B1D7
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
 ╔═╗┌─┐┌─┐┬─┐┌─┐┌┬┐┌─┐┬─┐  ╔═╗┬  ┬┌─┐┬─┐┬  ┌─┐┌─┐┌┬┐┬┌┐┌┌─┐
 ║ ║├─┘├┤ ├┬┘├─┤ │ │ │├┬┘  ║ ║└┐┌┘├┤ ├┬┘│  │ │├─┤ │││││││ ┬
 ╚═╝┴  └─┘┴└─┴ ┴ ┴ └─┘┴└─  ╚═╝ └┘ └─┘┴└─┴─┘└─┘┴ ┴─┴┘┴┘└┘└─┘
@@ -281,7 +293,18 @@ Double quotes (" ") = Java treats it as [text]. It will glue it together.
 ╔═╗┌┬┐┌─┐┌┐┌┌┬┐┌─┐┬─┐┌┬┐  ╔═╗┬ ┬┌┬┐┌─┐┬ ┬┌┬┐
 ╚═╗ │ ├─┤│││ ││├─┤├┬┘ ││  ║ ║│ │ │ ├─┘│ │ │ 
 ╚═╝ ┴ ┴ ┴┘└┘─┴┘┴ ┴┴└──┴┘  ╚═╝└─┘ ┴ ┴  └─┘ ┴
-- println
+*** println:drill:
+:PROPERTIES:
+:ID:       8A54203B-1772-41B5-AF9B-BD744B793906
+:DRILL_LAST_INTERVAL: 0.0
+:DRILL_REPEATS_SINCE_FAIL: 1
+:DRILL_TOTAL_REPEATS: 7
+:DRILL_FAILURE_COUNT: 7
+:DRILL_AVERAGE_QUALITY: 1.143
+:DRILL_EASE: 2.5
+:DRILL_LAST_QUALITY: 0
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
 has an [Implicit] Newline. [Implici]t means it is understood without being [explicitly] written. You don't have to write \n; the function [assumes] it and adds it [automatically.]
 
 println uses String [Concatenation].[ Concatenation] means chaining things together end-to-end. When you do "My age is " + age, you are [concatenating] the text and the variable.
@@ -289,8 +312,19 @@ println uses String [Concatenation].[ Concatenation] means chaining things toget
 println does not add [a new line before the text], but instead, it [outputs the text first], and then adds the [\n] at the very end. That is 100% correct.
 so it's same as print[("\n\n")];
 
-
-- printf'
+*** print:drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       619995DB-B655-4298-80A4-431DD858B615
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
  requires an [Explicit] Newline. Explicit means you [must write it out yourself]. If you want a [newline] with printf, you must [explicitly ] type [ \n] at the end.
 3 "value": X3
  printf uses String [Substitution]  (or String [Interpolation]). It creates a mold (like "My age is [%d]") and [substitutes] the [%d] with the actual variable at runtime.
@@ -302,35 +336,7 @@ so it's same as print[("\n\n")];
  when is printf actually needed?
 
 
-** java:drill:
-+============================================================================+
-|                                 J  D  K                                    |
-|   ([Dev Kit] | [javac], jar, javadoc | [Compiles], Runs, Archives)             |
-|    (Java Development Kit   The Full Tool box        
-|   +--------------------------------------------------------------------+   |
-|   |                              J  R  E                               |   |
-|   |   ([Runtime]    | [Runs apps] | [No compilers]                       
-|   |   *JARs inside JRE:JVM Implementation = The java executable       |   |
-|   |   +------------------------------------------------------------+   |   |
-|   |   |                           J  C  L                          |   |   |
-|   |   |   ([Class Lib] | java.lang, .util, .io |[ Pre-written code]) |   |   |   
-|   |   |   (Java Class Library / API | [Pre-written code] | [java.*]  |   |   |
-|   |   |   +--------------------------------------------------------+   |   |   |
-|   |   |   |                        J  V  M                         |   |        |
-|   |   |   |   ([Virtual Machine] |[ Execution Engine] |                |   |   |
-|   |   |   |      [Class Loader]    [Bytecodecode verifier]  
-|   |   |   +--------------------------------------------------------+   |   |   |
-|   |   |                                                                |   |   |
-|   |   +------------------------------------------------------------+   |   |
-|   |                                                                    |   |
-|   +--------------------------------------------------------------------+   |
-|                                                                            |
-|  .JAR = Archive of .class files. (Created by JDK, read by JRE/JVM)         |
-+============================================================================+
-JVM Specification = The Rulebook (Abstract / Documentation)
-JDK (Tools) 
- └── JRE (Runtime environment)
-      └── JVM Implementation (The HotSpot or OpenJ9 software engine)
+
 
 You write [Main.java]
 You use the JDK's [javac tool]. It reads the [JVM Specification] to know the rules, and outputs Main.[class] (Bytecode).
@@ -342,7 +348,19 @@ You use the JDK's [javac tool]. It reads the [JVM Specification] to know the rul
 
 
 ** wrong
-*** JRE vs JDK
+*** JRE vs JDK:drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       B1950288-A946-4A3F-86B3-C3DE5B2E8689
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
 First, you will write a source code file with the .java extension. Then you will compile it to obtain a .class file. Finally, you want to run the program.
 
 What is the minimal environment required to perform all of these actions?
@@ -362,3 +380,677 @@ The minimal environment is [JRE]
 ** new keyword
 
 In most cases, an object of a reference type can be created using the new keyword. When we use the new keyword, the memory is allocated for the object we create. That is called instantiation of the object because we create an instance of it. Then we initialize the variable by assigning some value to it. Often, as in our example, it is done with one line.
+
+
+*** how both types save in stack ?
+int age = 25;
+Car myCar = new Car();
+
+ | Variable Name | Data Type         | Stack Slot # |
+ | ---           | ---               | ---          |
+ | `age`         | `int` (Primitive) | Slot 0       |
+ | `myCar`       | `Car` (Reference) | Slot 1       |
+Note: The names age and myCar do not exist at [runtime] for the computer. They are replaced by "Slot 0" and "Slot 1". The only reason you can see them while debugging is because the compiler saves this table inside the .class file just for the debugger
+
+** java JDK:drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       78BBC04C-1CD3-48D7-8EF8-B581C6B60EE1
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+
+
+
+
++=====================================================================+
+ |                           J  D  K                                   |
+ |       (Java Development Kit | For Developers | Compile & Run)       |
+ |                                                                     |
+ |   Source Code          Compiler           Bytecode                  |
+ |   [ Main.java ]  ----( javac )---->  [ Main.class ]                 |
+ |         ^                                |                          |
+ |         |                                |                          |
+ |   (Needs JDK)                     (Feeds into JRE)                  |
+ |         |                                |                          |
+ |         |                                v                          |
+ |   +-------------------------------------------------------------+   |
+ |   |                          J  R  E                             |   |
+ |   |        (Java Runtime Env | For Users | Run Only)                |
+ |   |                                                              |   |
+ |   |   Bytecode             Engine + Libs         Output          |   |
+ |   |   [ Main.class ]  ---( JVM + JCL )--->  [ Running App! ]     |   |
+ |   |                                                              |   |
+ |   +-------------------------------------------------------------+   |
+ |                                                                     |
++=====================================================================+
+
+
+
+
+
+* primitive vaule
+
+** primitive and Referece concept:drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       A93713DF-FD36-49B0-9033-D102543012A5
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+
+Let's break down why the wording in those sentences is tricky.
+
+### The Rule of Thumb:
+
+- **Primitives** (like `int 100`) **STORE** values[ directly.]
+- **References** (like `String "abc"`) **REFERENCE** values[ indirectly] (via an[ address]).
+
+---
+
+> _"The variables a and b have **reference** to the same value 100."_
+
+If `a` and `b` are `int` variables (primitives), this sentence is **WRONG**. Primitives do not use [references]. They **store** the value directly.
+
+Here is what actually happens with primitives:
+
+text
+
+int a = 100;
+
+int b = 100;
+
+  
+
+Variable a Variable b
+
++---------+ +---------+
+
+ | 100 | | 100 | <-- They STORE the [value] directly
+
++---------+ +---------+ They DO NOT reference each other.
+
+**Corrected Sentence 1:** "The variables a and b **store** the same value 100."
+
+  
+
+Variable c Variable d
+
++---------+ +---------+
+
+ | Addr 0 | | Addr 0 | <-- They STORE the [address] (reference)
+
++---------+ +---------+
+
+ | |
+
+V V
+
++-----------------+
+
+ | "abc" | <-- The actual value is out here
+
++-----------------+
+
+**Corrected Sentence 2:** "The variables c and d have **reference** to the same value "abc"."
+
+---
+
+### Summary:
+
+The difference between those two statements is the mix-up between **Store** and **Reference**.
+
+- Variables holding `100` (a primitive) [**store**] the 100. They don't reference it.
+- Variables holding `"abc"` (a reference type) [**reference**] the "abc". They don't store the text itself inside the variable box.
+
+
+
+
+
+
+***  Primitives stack same value :drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       D78C2962-F33A-42A2-92E7-54FA08D3545C
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+
+If two primitives have the same value, they are considered equal. There is no confusion.
+
+text
+
+int a = 100;
+
+int b = 100;
+
+  
+
+Stack Memory
+
++---------+ +---------+
+
+ | a = 100 | | b = 100 |
+
++---------+ +---------+
+
+  
+
+Are they the same value? YES.
+
+Are they the same variable? NO, but we don't care,
+
+because 100 always equals 100. (a == b is TRUE)
+
+---
+
+*** References (Heap) same value :drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       BE226DA4-EE8B-43D2-AD59-0F4CA66BEB3A
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+
+Here is the situation you saw. Let's create two Strings using the `new` keyword:
+x
+java
+
+String c \= new String("abc");
+
+String d \= new String("abc");
+
+Here is what the computer sees:
+
+text
+
+Stack (Variables) Heap (The Objects)
+
++-------------+ +-----------------+
+
+ | c = Addr 0 |------------>| Object 1: "abc" |
+
++-------------+ +-----------------+
+
+  
+
++-------------+ +-----------------+
+
+ | d = Addr 1 |------------>| Object 2: "abc" |
+
++-------------+ +-----------------+
+
+Now, let's ask the computer questions about them:
+
+
+
+*** make same address in heap :drill: 
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       C4915868-D03E-4237-B2CD-8970AFFB67FC
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+Just to make it trickier, Java has a special shortcut for Strings. If you DON'T use the `new` keyword:
+
+java
+
+String e = "abc";
+
+String f = "abc";
+
+Java is smart and says: "Why create two identical objects? I'll just make one and have both variables point to it."
+
+text
+
+
+Stack Heap
+
++-------------+ +-----------------+
+
+ | e = Addr 0 |--------->| |
+
++-------------+ | Object 1: "abc" |
+
+ | |
+
++-------------+ +-----------------+
+
+ | f = Addr 0 |---------^
+
++-------------+
+
+  
+
+Here, e == f is TRUE because they have the same address!
+
+### Summary
+
+When you saw "even if they have the same value but not same in this logic," it was talking about the `==` operator.
+
+- **Primitives:** `==` compares the **values** (100 vs 100).
+- **References:** `==` compares the **addresses** (Addr 0 vs Addr 1), NOT the values inside the objects. Two separate objects with the value "abc" are NOT considered the same by `==`.
+
+
+
+      String c = "java";
+      String d = "java";
+
+      Stack                 String Pool (Part of Heap)
+     +-------------+         +-----------------+
+     | c           |         |                 |
+     | [ Addr 1  ] |-------->|  Object "java"  |
+     +-------------+         +-----------------+
+                               Addr 1
+     +-------------+              ^
+     | d           |              |
+     | [ Addr 1  ] |--------------  (Java automatically shares the address!)
+     +-------------+
+
+     Result: c == d is TRUE!
+
+
+
+** Primitives vs Refernece                                            :drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       2C2DD6EA-3DC6-43B8-93B0-A5A447FB91A0
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 4
+:DRILL_FAILURE_COUNT: 3
+:DRILL_AVERAGE_QUALITY: 1.5
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+╔═╗┬─┐┬┌┬┐┬┌┬┐┬┬  ┬┌─┐┌─┐  ┬  ┬┌─┐  ╦═╗┌─┐┌─┐┌─┐┬─┐┌┐┌┌─┐┌─┐┌─┐
+╠═╝├┬┘│││││ │ │└┐┌┘├┤ └─┐  └┐┌┘└─┐  ╠╦╝├┤ ├┤ ├┤ ├┬┘│││├┤ │  ├┤ 
+╩  ┴└─┴┴ ┴┴ ┴ ┴ └┘ └─┘└─┘   └┘ └─┘  ╩╚═└─┘└  └─┘┴└─┘└┘└─┘└─┘└─┘
+       PRIMITIVE (int a = 100)
+
+       Variable Box
+      +---------+
+      |    a    |  <-- Name
+      |---------|
+      |   100   |  <-- The ACTUAL [VALUE] is inside the box!
+      +---------+
+
+
+
+       REFERENCE (String s = "java")
+
+       Variable Box                      The Heap (Object storage)
+      +---------+                        +-----------------+
+      |    s    |  <-- Name              |    [Object]     |
+      |---------|                        |-----------------|
+      |  Addr 0 | -- Remote Control->    |    "java"       | <-- Actual 
+      +---------+          |             +-----------------+
+                           |
+                           V
+                 (Points to memory address)
+
+
+**** The range of an integer type :drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       ADD2B30E-0949-40A2-A191-063E24538799
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 2
+:DRILL_FAILURE_COUNT: 1
+:DRILL_AVERAGE_QUALITY: 2.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+
+ What keyword is used to create an object of a reference type?
+ [new]
+ 
+byte: size 8 bits (1 byte), ranging from −128 to 127;
+
+short: size [16 bits] ([2 bytes]), ranging from [−32768] to[32767]
+
+
+How many bytes of memory does the int type occupy?
+[ 4 ]
+
+
+
+자바의 기본형(Primitive Type) 데이터 크기는 다음과 같습니다:byte: 8비트short: 16비트char: 16비트 (유니코드 문자 저장)int: 32비트long: 64비트
+
+
+
+**** java how to set Variable:drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       DBED50A7-73F5-4A26-AC87-6798290FCF7C
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+   Box mybox = new Box();
+   ─┬─ ──┬──   ─┬─ ─┬─
+    │    │      │   │
+    │    │      │   └── ③ INITIALIZATION
+    │    │      │        [Constructor] Box() runs, object gets [values]
+    │    │      │
+    │    │      └── ② [INSTANTIATION]
+    │    │           'new' allocates [memory] on[ HEAP], [creates] object
+    │    │
+    │    └── ① DECLARATION ([variable name])
+    │         'mybox' = reference [variable name]
+    │
+    └── ① DECLARATION ([type])
+         'Box' = [class] type (what kind of reference)
+
+**** Java to new object:drill:
+SCHEDULED: <2026-06-15 Mon>
+:PROPERTIES:
+:ID:       BC400B3C-6483-4A79-BCE5-E719044CF0D2
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [Y-06-11 Thu 17:%]
+:END:
+fo
+  ┌────────────┬──────────────────┬─────────────────────┐
+  │  CATEGORY  │     EXAMPLE      │     NEED 'new'?     │
+  ├────────────┼──────────────────┼─────────────────────┤
+  │Primitive   │  int x = 10;     │       [❌ NO ]      │
+  │            │  double d = 3.14;│   (value on[ stack] │
+  ├────────────┼──────────────────┼─────────────────────┤
+  │  Object    │  Box b=new Box();│       [✅ YES ]     │
+  │  (class)   │  String s="hi";  │   (object on [heap] │
+  ├────────────┼──────────────────┼─────────────────────┤
+  │  Array     │ int[] a=new int[5]│     [ ✅ YES]      │
+  │            │                  │ (array is an[object]│
+  ├────────────┼──────────────────┼─────────────────────┤
+  │  Wrapper   │ Integer i = 10;  │  [auto-boxed behind]│
+  │  (object   │ Double d = 3.14; │   the scenes 😉     │
+  │   version) │                  │                     │
+  └────────────┴──────────────────┴─────────────────────┘
+	 
+
+**** how to Box mybox = new Box();  work ?:drill:
+:PROPERTIES:
+:ID:       0BB15E77-EE0A-4FE9-89C3-F84A81F260DE
+:END:
+ ① 'new' [reads] the CLASS BLUEPRINT
+ ═══════════════════════════════
+   ┌──────────────────┐
+   │  class   Box {   │  ← [JVM] loads this from Box.class
+   │     int width;   │     "How big is a Box?"
+   │     int height;  │     → 3 ints = 12 bytes
+   │     int depth;   │
+   │   }              │     Also: "What constructor to run?"
+   └──────────────────┘
+          ▼
+ ② [ALLOCATE] memory on HEAP
+ ═════════════════════════
+   HEAP
+   ┌─────────────────┐
+   │ ┌─────────────┐ │  ← 'new' carves out exactly 12 bytes
+   │ │ ████████████│ │     (based on blueprint)
+   │ │ ████████████│ │
+   │ └─────────────┘ │
+   └─────────────────┘
+          ▼
+ ③ [INITIALIZE] with default values
+ ═══════════════════════════════
+   HEAP
+   ┌─────────────────┐
+   │ width  = 0      │  ← Java auto-sets defaults
+   │ height = 0      │     int → 0, double → 0.0
+   │ depth  = 0      │     object ref → null
+   └─────────────────┘
+          ▼
+ ④ [RUN] CONSTRUCTOR
+ ═══════════════════════════════
+   Box() {              ← constructor code executes
+       width = 1;           (if values are set here,
+       height = 2;           they overwrite the defaults)
+       depth = 3;
+   }
+  HEAP
+   ┌─────────────────┐
+   │ width  = 1      │
+   │ height = 2      │
+   │ depth  = 3      │  ← constructor values now in place
+   └─────────────────┘
+          ▼
+ ⑤ [RETURN] THE ADDRESS(reference)
+ ═══════════════════════════════
+   'new' gives back:  0x7fa3c000  (a memory address)
+
+          ▼
+
+ ⑥[STORE] IN VARIABLE = pointer created!
+ ═══════════════════════════════
+   STACK                     HEAP
+   ┌───────────┐        ┌─────────────────┐
+   │ mybox =   │        │ width  = 1      │
+   │ 0x7fa3c000├───────▶│ height = 2      │
+   │           │pointer │ depth  = 3      │
+   └───────────┘        └─────────────────┘
+   mybox  now holds the address → pointer is established!
+
+
+
+** Primitive data types
+╔═╗┬─┐┬┌┬┐┬┌┬┐┬┬  ┬┌─┐  ┌┬┐┌─┐┌┬┐┌─┐  ┌┬┐┬ ┬┌─┐┌─┐┌─┐
+╠═╝├┬┘│││││ │ │└┐┌┘├┤    ││├─┤ │ ├─┤   │ └┬┘├─┘├┤ └─┐
+╩  ┴└─┴┴ ┴┴ ┴ ┴ └┘ └─┘  ─┴┘┴ ┴ ┴ ┴ ┴   ┴  ┴ ┴  └─┘└─┘
+*** values :drill:
+   byte (8비트)                          short (16비트)
+ ┌┬┬┬┬┬┬┬┬┐                          ┌┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┐
+ └┴┴┴┴┴┴┴┴┘  1 byte                  └┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┘  2 bytes
+ ├─────────┤                         ├───────────────────┤
+ [-128 ~ 127]                        [ -32,768 ~ 32,7677]
+
+   char (16비트) — 유니코드               int (32비트)
+ ┌┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┐                ┌┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┐
+ └┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┘                └┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┘
+  ├──────────────────┤             ├──────────────────────────────────┤
+  ['\u0000' ~ '\uffff']              [ 2,147,483,648 ~ 2,147,483,647]
+
+   long (64비트)
+ ┌┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┐
+ └┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┘ ├──────────────────────────────────────────────────────────────────────┤
+           -9.22e18 ~ 9.22e18
+
+ byte  =  [2³]                 ▓▓▓▓▓▓▓▓
+ short =  [2⁴]                 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ char  =  [2⁴]                 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  (0~65535, unsigned)
+ int   =  [2⁵]                 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ long  =  [2⁶]     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+
+ 
+** Reading user input with Scanner
+
+
+*** Standard input
+
+    ┌──────────────────────────────────────────────────┐
+    │                JAVA PROGRAM                      │
+    │                                                  │
+    │  ┌────────────────────────────────┐              │
+    │  │     java.lang (AUTO-LOADED)    │              │
+    │  │  ┌──────────┐ ┌─────────────┐  │              │
+    │  │  │System.in │ │ System.out  │  │   ALWAYS     │
+    │  │  │ (stdin)  │ │ (stdout)    │  │   AVAILABLE  │
+    │  │  └──────────┘ └─────────────┘  │              │
+    │  └────────────────────────────────┘              │
+    │                                                  │
+    │  ┌────────────────────────────────┐              │
+    │  │   java.util.Scanner            │              │
+    │  │   (MUST import manually)       │◀── NEEDS:    │
+    │  │   Makes reading stdin easier   │    import    │
+    │  └────────────────────────────────┘              │
+    └──────────────────────────────────────────────────┘
+ By default, the standard input acquires data from keyboard input
+    but it can be _redirected_ from a file.
+
+to read values of _types_ , like strings or numbers, from the standard input. 
+
+
+
+
+*** Scanner
+
+  ┌──────────┐      Raw Data Stream       ┌───────────────)      Readable Data  ┌────────────┐
+  │ KEYBOARD │──────────────────────────▶│  System.in    )──────────────────────│ YOUR CODE  │
+  └──────────┘     (Just raw bytes/      │  (The Pipe)   )                      │ (Variables) │
+                   characters)           └───────────────)                      └────────────┘
+                                             │
+                                             │  We attach a Scanner to it:
+                                             ▼
+                                          ┌─────────────────────────┐
+                                          │       SCANNER           │
+                                          │   (The Smart Tool)      │
+                                          │                         │
+                                          │  Translates raw data    │
+                                          │  into:                  │
+                                          │    • nextInt()   ➔ 5    │
+                                          │    • nextDouble()➔ 3.14 │
+                                          │    • nextLine() ➔ "Hi"  │
+                                          └─────────────────────────┘
+
+
+
+
+*** Why needed to call scanner again ?
+          YOUR TINY .JAVA FILE                     THE GIANT JRE LIBRARY
+  +--------------------------------+      +--------------------------------+
+  |                                |      |                                |
+  |  class Main {                  |      |  [Scanner.class]               |
+  |                                |      |   - Blueprint for memory       |
+  |    // I can't remember         |      |   - How to read System.in      |
+  |    // anything by myself!      |      |                                |
+  |                                |      |  [System.class]                |
+  |    import java.util.Scanner; --|------|->  - The pipe from keyboard    |
+  |    // "I need to borrow        |      |                                |
+  |    //  a brain from outside!"  |      |  [ArrayList.class]             |
+  |                                |      |   - Blueprint for lists        |
+  |  }                             |      |                                |
+  |                                |      |          ...thousands more...  |
+  +--------------------------------+      +--------------------------------+
+         (Just a text file)                      (Lives in the JDK/JRE)
+
+                    │                                         │
+                    │  1. JDK Compiles your file              │
+                    │  (It checks if the library exists)      │
+                    ▼                                         ▼
+  ====================================================================
+                             JVM RUNTIME
+  ====================================================================
+                    │                                         │
+                    │  2. JVM runs your code                  │
+                    │  (It loads library brains into memory)  │
+                    ▼                                         ▼
+
+         YOUR OBJECT (No memory)              BORROWED OBJECT (Has memory!)
+  +--------------------------------+      +--------------------------------+
+  |                                |      |                                |
+  |  Main obj = new Main();        |      |  Scanner sc = new Scanner(...) |
+  |                                |      |                                |
+  |  // Still empty...             |      |  +--------------------------+  |
+  |  // Needs to call Scanner  ----|------|->| REMEMBERS: System.in     |  |
+  |  // to do the thinking!        |      |  | REMEMBERS: Leftover text |  |
+  |                                |      |  +--------------------------+  |
+  +--------------------------------+      +--------------------------------+
+
+A Class is just a blueprint. It does NOT [remember] anything. 
+An Object is the actual thing built from the blueprint. IT [remembers]!
+Scanner sc = new Scanner(System.in);
+
+
+You ask the JVM to build: new Scanner(System.in)
+JVM goes to the JRE Library: Finds the Scanner.class blueprint.
+JVM "Objectifies" it: Creates a real Scanner object in memory with its own brain and memory space.
+Your object borrows: Your Main object asks the Scanner object to do the reading. The Scanner object remembers the input and hands the result back to your object.
+
+
+
+There is one tiny trick the JVM does. 
+
+Notice how you never typed new System.out()? You just typed System.out.println(). 
+
+That is because the JVM pre-objectifies System.out for you before your program even starts! When the JVM boots up, it automatically builds the System.out object and leaves it sitting in memory, waiting for you to use it.
+
++--------------------------------------------------+
+|                  JVM RUNTIME MEMORY               |
+|                                                   |
+|  +---------------+        +-----------------+     |
+|  | YOUR OBJECT   |        | PRE-BUILT OBJ   |     |
+|  |               |        |                 |     |
+|  | Needs to talk |  USES  | System.out      |     |
+|  | to the screen |------->| (Built by JVM   |     |
+|  |               |        |  at startup!)   |     |
+|  +---------------+        +-----------------+     |
+|                                                   |
++--------------------------------------------------+
+
+
+ i feel some inefficient double time check are they connected each other  and brow after that any reason on Object oriented language do like that ?
+
+
+
+ Reason 1: Safety (Catch the error BEFORE the user sees it)
+
+Imagine you misspelled Scanner as Scannerr.
+
+e first check (Compile time) is a spellchecker. It guarantees you don't have a program that crashes halfway through because of a typo.
+
+
+: Flexibility (You can swap parts without breaking your code)
+
+Because your .java file is separated from the JRE Library, you can update the library without touching your code.
+- feels like bank system or backend system considered design
+
+
+eason 3: Memory (Only load what you actually use)
+
+f Java copy-pasted the whole library into your program like C does, every tiny Java program would be Gigabytes in size!
+
+Instead, the JVM is lazy. It only "objectifies" and loads classes exactly when you ask for them.
