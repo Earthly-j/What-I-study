@@ -1,42 +1,52 @@
-* DBCの概念整理 📚
+* DBCノ概念整理 📚  :drill: 
+:PROPERTIES:
+:ID:       3F360017-60A1-4A95-AEEB-E6BC219F2A40
+:END:
+** 1\. JDBCトハ？ :drill:
+:PROPERTIES:
+:ID:       93F7469C-2AFE-430C-9967-535FCBC75510
+:END:
 
-** 1\. JDBCとは？
+*JDBC（Java Database Connectivity）* ハ、Java programカラrelational databaseニ接続スルタメニ提供サレル *標準API* デアリ、具体的ニハ [java.sql  package ]ヲ指シマス。
 
-*JDBC（Java Database Connectivity）* は、Javaプログラムからリレーショナルデータベースに接続するために提供される *標準API* であり、具体的には *=java.sql= パッケージ* を指します。
+- JDBC APIヲ使エバ、[DBMSニ依存シナイprogram] ヲ開発デキマス
+- ツマリ、開発時ニH2ヲ使ッテイテモ、本番環境デハ *別ノ databaseへ簡単ニ切リ替エラレマス*
+  
+** 2\. JDBCノ動作原理 :drill:
+:PROPERTIES:
+:ID:       406BE30F-2101-4881-9FBF-7FE3BA3D9511
+:END:
 
-- JDBC APIを使えば、*DBMSに依存しないプログラム* を開発できます
-- つまり、開発時にH2を使っていても、本番環境では *別のデータベースへ簡単に切り替えられます*
+JDBCガ特定ノ databaseニ依存セズニ済ムノハ、[JDBC APIガ interfaceヲ基盤トシ、多態性ヲ利用シテイル] タメデス。
 
-** 2\. JDBCの動作原理
+Application ↔ JDBC API(java.sql) ↔ JDBC driver(.jar) ↔ Database
+└──────── DBMSニ依存シナイ領域 ────────┘ └─ DBMSニ依存スル領域 ─┘
 
-JDBCが特定のデータベースに依存せずに済むのは、*JDBC APIがインターフェースを基盤とし、多態性を利用している* ためです。
+| 構成要素             | 説明                                                                                                                                                          |
+|---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| JDBC API (java.sql) | 開発者ガ利用スル[interface]ヲ提供 → 変更ガナイ限リ、 application側ノ修正モ不要                                                                                         |
+| JDBC driver         | JDBC APIノ interfaceヲ [実装（implements）シタ] class。jar形式ノ圧縮 fileトシテ提供サレ、DBMS各社ノウェブサイトカラ downloadデキマス。[特定ノDBニ依存スル code]デ構成サレテイマス |
 
-text
-
-Application ↔ JDBC API(java.sql) ↔ JDBCドライバー(.jar) ↔ Database
-
-└──────── DBMSに依存しない領域 ────────┘ └─ DBMSに依存する領域 ─┘
-
-| 構成要素                 | 説明                                                                                                          |
-|-----------------------+-------------------------------------------------------------------------------------------------------------|
-| *JDBC API (java.sql)* | 開発者が利用する *インターフェース* を提供 → 変更がない限り、アプリケーション側の修正も不要                                                            |
-| *JDBCドライバー*           | JDBC APIのインターフェースを *実装（implements）したクラス*。*jar形式の圧縮ファイル*として提供され、DBMS各社のウェブサイトからダウンロードできます。*特定のDBに依存するコード*で構成されています |
-
-** 3\. 重要な結論 ⭐
+** 3\. 重要ナ結論 ⭐ :drill:
+:PROPERTIES:
+:ID:       501D11EE-89FA-4C49-991A-F9C7A153815C
+:END:
 
 #+begin_quote
 
 
-データベースが変更されても、*JDBCドライバーだけを交換すれば、プログラムを修正せずに* データベースを変更できます！
+ databaseガ変更サレテモ、[JDBC driverダケヲ交換スレバ、 programヲ修正セズニ]  databaseヲ変更デキマス！
 
 
 #+end_quote
 
-** 4\. JDBCプログラムの手順
+** 4\. JDBC programノ手順 :drill:
+:PROPERTIES:
+:ID:       EEC91285-E13A-4F17-8BDC-145CBE4DA135
+:END:
 
-- 最も基本的で重要な作業は、*データベースへの接続* です
-- 最終的な目標は、Javaプログラムで記述した *SQL文をデータベースに送信* し、DBにそのSQLを処理させることです
+- 最モ基本的デ重要ナ作業ハ、[databaseへノ接続] デス
+- 最終的ナ目標ハ、Java programデ記述シタ [SQL文ヲ databaseニ送信] シ、DBニソノSQLヲ処理サセル事デス
 
 -----
-
-💡 *一言まとめ*: JDBCはインターフェースベースの標準APIで、ドライバーを交換するだけで *DBの変更に柔軟に対応* できる技術です。
+💡 *一言マトメ*: JDBCハ interfaceベースノ標準APIデ、 driverヲ交換スルダケデ [DBノ変更ニ柔軟ニ対応] デキル技術デス。
